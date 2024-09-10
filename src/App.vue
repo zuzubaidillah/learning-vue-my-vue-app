@@ -1,22 +1,18 @@
 <script>
 import Navbar from './components/HelloWorld.vue'
+import Form from './views/Form.vue'
 
 export default {
   name: 'App',
   data() {
     return {
       message: 'Dari App vue',
-      listPlot: [
-        {
-          id: 1,
-          name: '00:10-00:20'
-        }
-      ]
     }
   },
 
   components: {
     Navbar,
+    Form,
     // navbar: () => import('./components/Navbar.vue'),
   },
 
@@ -47,8 +43,9 @@ export default {
 <template>
   <Navbar :msg="message"/>
   <div class="text-center">
-    <h1 class="text-4xl font-bold text-blue-600">Hello, TailwindCSS with Vue 3! {{list}} {{listPlot.length}}</h1>
+    <h1 class="text-4xl font-bold text-blue-600">Hello, TailwindCSS with Vue 3!</h1>
   </div>
+  <Form/>
 </template>
 
 <style scoped>

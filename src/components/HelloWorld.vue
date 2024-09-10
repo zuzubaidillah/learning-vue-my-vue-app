@@ -1,4 +1,4 @@
-<script setup>
+<!--<script setup>
 import { ref } from 'vue'
 
 defineProps({
@@ -6,6 +6,17 @@ defineProps({
 })
 
 const count = ref(0)
+</script>-->
+<script>
+export default {
+  name: 'HelloWorld',
+  props: ['msg'],
+  data() {
+    return {
+      count: 999
+    }
+  }
+}
 </script>
 
 <template>

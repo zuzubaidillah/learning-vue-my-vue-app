@@ -1,22 +1,11 @@
 <script>
-import Navbar from './components/HelloWorld.vue'
-import Form from './views/Form.vue'
 
 export default {
   name: 'App',
   data() {
     return {
-      message: 'Dari App vue',
     }
   },
-
-  components: {
-    Navbar,
-    Form,
-    // navbar: () => import('./components/Navbar.vue'),
-  },
-
-  props: ['list'],
 
   /**
    * fungsi yang akan dijalankan disetiap komponen ini render
@@ -41,11 +30,15 @@ export default {
 </script>
 
 <template>
-  <Navbar :msg="message"/>
-  <div class="text-center">
-    <h1 class="text-4xl font-bold text-blue-600">Hello, TailwindCSS with Vue 3!</h1>
+  <div>
+    <nav>
+      <ul class="flex flex-wrap gap-5 p-5 bg-amber-50">
+        <li class="text-2xl text-amber-500 hover:text-amber-800 hover:border-b font-bold"><router-link :to="{name: 'HomePage'}">Home</router-link></li>
+        <li class="text-2xl text-amber-500 hover:text-amber-800 hover:border-b font-bold"><router-link to="/todo-list">Todo List</router-link></li>
+      </ul>
+    </nav>
+    <router-view></router-view>
   </div>
-  <Form/>
 </template>
 
 <style scoped>
